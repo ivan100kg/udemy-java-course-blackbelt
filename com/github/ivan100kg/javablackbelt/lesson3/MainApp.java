@@ -59,5 +59,10 @@ public class MainApp {
         // --- wrong!
 //        List<Object> testList= new ArrayList<String>();
 
+        // wildcard <?>
+        List<Number> l1 = new ArrayList<>();
+        List<?> l2 = new ArrayList<String>();
+        List<? super Integer> l3 = new ArrayList<Number>();
+        List<? extends Number> l4 = new ArrayList<Double>();
     }
 }
