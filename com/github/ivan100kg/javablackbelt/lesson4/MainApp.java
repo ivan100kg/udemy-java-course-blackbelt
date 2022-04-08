@@ -33,5 +33,13 @@ public class MainApp {
 
         // LinkedList
         LinkedList<String> lList = new LinkedList<>();
+        lList.add("a");
+        lList.add("b");
+        lList.add("c");
+        System.out.println(lList);
+        lList.offerFirst("g");  // вставка в начало листа
+        System.out.println(lList);
+        System.out.println(lList.peekFirst());
+        lList.pop();
     }
 }
