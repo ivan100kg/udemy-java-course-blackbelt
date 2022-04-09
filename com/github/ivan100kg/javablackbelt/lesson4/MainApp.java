@@ -41,5 +41,13 @@ public class MainApp {
         System.out.println(lList);
         System.out.println(lList.peekFirst());
         lList.pop();
+
+
+        // Vector
+        List<Integer> vList = new Vector<>();
+        vList.add(34);
+        vList.add(49);
+        int vSize = vList.size();
+
     }
 }
