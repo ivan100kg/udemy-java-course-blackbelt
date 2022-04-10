@@ -25,7 +25,7 @@ public class MainApp {
         List<String> list2 = List.copyOf(aList);    // immutable
         Iterator<String> it = aList.listIterator();
         while (it.hasNext()) {                      // есть след элемент?
-            if(it.next().equals("a"))               // получить элемент
+            if (it.next().equals("a"))               // получить элемент
                 it.remove();                        // удаление элемента
         }
         aList.removeIf(s -> s.equals("a"));         // тоже самое удаление
@@ -44,10 +44,17 @@ public class MainApp {
 
 
         // Vector
-        List<Integer> vList = new Vector<>();
-        vList.add(34);
-        vList.add(49);
-        int vSize = vList.size();
+        Vector<Integer> vList = new Vector<>();
+        vList.add(12);
+        vList.set(0, 13);
+        System.out.println(vList.firstElement());
 
+
+        // Stack
+        Stack<Integer> sList = new Stack<>();
+        sList.push(12);
+        sList.push(15);
+        sList.pop();
+        System.out.println(sList.peek());
     }
 }
