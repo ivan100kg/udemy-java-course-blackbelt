@@ -71,5 +71,18 @@ public class MainApp {
         coderMap.put(new Coder("Ilya", "Bell", "Python"), 4.9);
         System.out.println(coderMap);
 
+
+        // TreeMap
+        TreeMap<String, Integer> tMap = new TreeMap<>();
+        tMap.put("Ivan", 39);
+        tMap.put("Igor", 42);
+        tMap.put("Ilya", 34);
+        System.out.println(tMap.get("Ivan"));
+//        System.out.println(tMap.firstEntry());
+//        System.out.println(tMap.pollFirstEntry());
+        System.out.println(tMap.tailMap("Ilya"));
+
+
+
     }
 }
