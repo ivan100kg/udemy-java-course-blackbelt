@@ -7,7 +7,7 @@ public class MainApp {
     public static void main(String[] args) {
 
         // List
-        List<Object> list = List.of(12, "13, 3.14");    // immutable
+        List<Object> list = List.of(12, "13", 3.14);    // immutable
         System.out.println(list);
 
 
@@ -56,5 +56,20 @@ public class MainApp {
         sList.push(15);
         sList.pop();
         System.out.println(sList.peek());
+
+
+        // HashMap
+        HashMap<String, Integer> hMap = new HashMap<>();
+        hMap.put("Ivan", 39);
+        hMap.put("Igor", 42);
+        hMap.put("Ilya", 34);
+        boolean present42 = hMap.containsValue(42);
+        System.out.println(hMap.entrySet());
+        Map<Coder, Double> coderMap = new HashMap<>();
+        coderMap.put(new Coder("Ivan", "Bond", "Java"), 9.6);
+        coderMap.put(new Coder("Igor", "Wing", "C++"), 7.2);
+        coderMap.put(new Coder("Ilya", "Bell", "Python"), 4.9);
+        System.out.println(coderMap);
+
     }
 }
