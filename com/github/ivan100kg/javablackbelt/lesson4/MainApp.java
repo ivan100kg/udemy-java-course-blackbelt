@@ -83,6 +83,15 @@ public class MainApp {
         System.out.println(tMap.tailMap("Ilya"));
 
 
+        // LinkedHashMap
+        LinkedHashMap<String, Integer> lhMap = new LinkedHashMap<>(16, 0.75f, true);
+        lhMap.put("Ivan", 39);
+        lhMap.put("Igor", 42);
+        lhMap.put("Ilya", 34);
+        System.out.println(lhMap);
+        lhMap.get("Igor");
+        System.out.println(lhMap);
+
 
     }
 }
