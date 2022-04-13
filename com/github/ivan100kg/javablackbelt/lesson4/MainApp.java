@@ -93,5 +93,32 @@ public class MainApp {
         System.out.println(lhMap);
 
 
+        // HashTable
+        Hashtable<String, Integer> htMap = new Hashtable<>();
+        htMap.put("Ivan", 39);
+        htMap.put("Igor", 42);
+        htMap.put("Ilya", 34);
+        System.out.println(htMap.contains(42));
+        System.out.println(htMap);
+
+
+        // HashSet
+        HashSet<Integer> hSet1 = new HashSet<>();
+        hSet1.add(1);
+        hSet1.add(2);
+        hSet1.add(3);
+        HashSet<Integer> hSet2 = new HashSet<>();
+        hSet2.add(1);
+        hSet2.add(9);
+        hSet2.add(3);
+        System.out.println(hSet1);
+        System.out.println(hSet2);
+        HashSet<Integer> union = new HashSet<>(hSet1);
+        union.addAll(hSet2);
+        System.out.println(union);
+        HashSet<Integer> intersect = new HashSet<>(hSet1);
+        intersect.retainAll(hSet2);
+        System.out.println(intersect);
+
     }
 }
