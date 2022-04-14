@@ -138,5 +138,17 @@ public class MainApp {
         System.out.println(lhSet.contains("Igor"));
         System.out.println(lhSet);
 
+
+        // Queue
+        Queue<String> queue = new LinkedList<>();
+        queue.add("Ivan");
+        queue.add("Igor");
+        queue.offer("Ilya");
+        queue.remove();
+        System.out.println(queue);
+        System.out.println(queue.element());
+        System.out.println(queue);
+
+
     }
 }
