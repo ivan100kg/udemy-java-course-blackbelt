@@ -120,5 +120,13 @@ public class MainApp {
         intersect.retainAll(hSet2);
         System.out.println(intersect);
 
+        // TreeSet
+        TreeSet<String> tSet = new TreeSet<>((o1, o2) -> o2.hashCode() - o1.hashCode());
+        tSet.add("Ivan");
+        tSet.add("Igor");
+        tSet.add("Ilya");
+        System.out.println(tSet.descendingSet());
+        System.out.println(tSet);
+
     }
 }
