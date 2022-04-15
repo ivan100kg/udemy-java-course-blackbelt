@@ -1,7 +1,6 @@
 package com.github.ivan100kg.javablackbelt.lesson4;
 
 import java.util.*;
-import java.util.function.Predicate;
 
 public class MainApp {
     public static void main(String[] args) {
@@ -149,6 +148,14 @@ public class MainApp {
         System.out.println(queue.element());
         System.out.println(queue);
 
+
+        // PriorityQueue
+        PriorityQueue<Integer> pQueue = new PriorityQueue<>();
+        pQueue.add(42);
+        pQueue.add(5);
+        pQueue.offer(13);
+        pQueue.peek();              // 5
+        pQueue.remove();            // remove 5
 
     }
 }
