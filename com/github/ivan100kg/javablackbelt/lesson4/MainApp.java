@@ -138,7 +138,7 @@ public class MainApp {
         System.out.println(lhSet);
 
 
-        // Queue
+        // Queue(LinkedList)
         Queue<String> queue = new LinkedList<>();
         queue.add("Ivan");
         queue.add("Igor");
@@ -156,6 +156,26 @@ public class MainApp {
         pQueue.offer(13);
         pQueue.peek();              // 5
         pQueue.remove();            // remove 5
+
+
+        // Deque(ArrayDeque)
+        ArrayDeque<Integer> deque = new ArrayDeque<>();
+        deque.addFirst(5);
+        deque.addLast(13);
+        deque.offerFirst(42);
+        deque.offerLast(31);
+        deque.add(19);
+        deque.offer(18);
+        deque.removeFirst();
+        deque.removeLast();
+        deque.pollFirst();
+        deque.pollLast();
+        deque.getFirst();
+        deque.getLast();
+        deque.peekFirst();
+        deque.peekLast();
+        System.out.println(deque);
+
 
     }
 }
