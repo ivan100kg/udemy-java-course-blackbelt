@@ -1,6 +1,7 @@
 package com.github.ivan100kg.javablackbelt.lesson6;
 
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 public class StudentInfo {
     public static void main(String[] args) {
@@ -26,6 +27,16 @@ public class StudentInfo {
         si.testStudents(students, new CheckOverGrade());
         System.out.println("----------");
         si.testStudents(students, st -> st.avgGrade > 7);
+        System.out.println("----------");
+        si.testStudents2(students, st -> st.age > 40);
+        System.out.println("----------");
+
+        Predicate<Student> p1 = student -> student.age < 40;
+        Predicate<Student> p2 = student -> student.sex == 'w';
+        si.testStudents2(students, p1.and(p2));
+        System.out.println("----------");
+        si.testStudents2(students, p1.or(p2));
+
 
     }
 
@@ -56,6 +67,14 @@ public class StudentInfo {
                 System.out.println(st);
         }
     }
+
+    void testStudents2(ArrayList<Student> arrayList, Predicate<Student> predicate) {
+        for (Student st : arrayList) {
+            if (predicate.test(st))
+                System.out.println(st);
+        }
+    }
+
 }
 
 interface StudentChecks {
