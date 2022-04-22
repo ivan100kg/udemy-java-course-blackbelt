@@ -1,7 +1,9 @@
 package com.github.ivan100kg.javablackbelt.lesson6;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Predicate;
+import java.util.function.Function;
 
 public class StudentInfo {
     public static void main(String[] args) {
@@ -36,8 +38,12 @@ public class StudentInfo {
         si.testStudents2(students, p1.and(p2));
         System.out.println("----------");
         si.testStudents2(students, p1.or(p2));
+        System.out.println("----------");
 
+        Function<Student, Double> f = student -> student.avgGrade;
+        System.out.println(f.apply(students.get(0)));
 
+        System.out.println(avgOfSomething(students, student -> student.avgGrade));
     }
 
 //    void printStudentOverGrade(ArrayList<Student> arrayList, double grade) {
@@ -73,6 +79,14 @@ public class StudentInfo {
             if (predicate.test(st))
                 System.out.println(st);
         }
+    }
+
+    private static double avgOfSomething(List<Student> studentList, Function<Student, Double> f) {
+        double result = 0;
+        for (Student st : studentList) {
+            result += f.apply(st);
+        }
+        return result / studentList.size();
     }
 
 }
