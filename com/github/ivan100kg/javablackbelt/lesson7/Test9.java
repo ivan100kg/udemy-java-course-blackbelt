@@ -17,6 +17,6 @@ public class Test9 {
 //        System.out.println(min);
 //        System.out.println(max);
 
-        students.stream().filter(st->st.getAge()>30).limit(2).forEach(System.out::println);
+        students.stream().filter(st->st.getAge()>30).limit(2).skip(1).forEach(System.out::println);
     }
 }
