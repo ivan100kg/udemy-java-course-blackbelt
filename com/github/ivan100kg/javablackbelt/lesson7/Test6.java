@@ -19,6 +19,9 @@ public class Test6 {
         Stream<Integer> stream5 = Stream.of(1, 2, 3, 4, 5, 1, 2, 3);
         System.out.println(stream5.distinct().toList());
 
+//        System.out.println(stream1.count());
+        System.out.println(stream1.distinct().count());
+
     }
 
 }
