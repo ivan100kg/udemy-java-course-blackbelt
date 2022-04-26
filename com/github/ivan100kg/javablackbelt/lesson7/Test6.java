@@ -17,10 +17,11 @@ public class Test6 {
 //        System.out.println(stream4.collect(Collectors.toSet()));
 
         Stream<Integer> stream5 = Stream.of(1, 2, 3, 4, 5, 1, 2, 3);
-        System.out.println(stream5.distinct().toList());
-
-//        System.out.println(stream1.count());
-        System.out.println(stream1.distinct().count());
+//        System.out.println(stream5.distinct().toList());
+//
+////        System.out.println(stream1.count());
+//        System.out.println(stream1.distinct().count());
+        System.out.println(stream5.distinct().peek(System.out::println).count());
 
     }
 
