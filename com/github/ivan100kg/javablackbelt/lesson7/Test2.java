@@ -20,6 +20,8 @@ public class Test2 {
 
         List<Integer> integerList = new ArrayList<>(Arrays.asList(1, 2, 2, 3, 3, 4, 5, 5));
         System.out.println(integerList.stream().collect(Collectors.toSet()));
+
+        System.out.println(students.stream().findFirst().get());
     }
 }
 
