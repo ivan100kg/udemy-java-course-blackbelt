@@ -2,6 +2,7 @@ package com.github.ivan100kg.javablackbelt.lesson7;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Test9 {
     public static void main(String[] args) {
@@ -17,6 +18,22 @@ public class Test9 {
 //        System.out.println(min);
 //        System.out.println(max);
 
-        students.stream().filter(st->st.getAge()>30).limit(2).skip(1).forEach(System.out::println);
+//        students.stream().filter(st->st.getAge()>30).limit(2).skip(1).forEach(System.out::println);
+        List<Integer> courses = students.stream()
+                .mapToInt(el -> el.getCourse())
+                .boxed()
+                .collect(Collectors.toList());
+
+        List<Double> grades = students.stream()
+                .mapToDouble(el -> el.getAvgGrade())
+                .boxed()
+                .collect(Collectors.toList());
+
+        int sum = students.stream().mapToInt(el -> el.age).sum();
+        int max = students.stream().mapToInt(el -> el.age).max().getAsInt();
+
+        System.out.println(courses);
+        System.out.println(grades);
+        System.out.println(sum);
     }
 }
