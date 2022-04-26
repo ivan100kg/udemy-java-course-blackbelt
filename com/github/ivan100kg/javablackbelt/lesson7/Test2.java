@@ -48,5 +48,45 @@ class Student {
                 ", avgGrade=" + avgGrade +
                 '}';
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public char getSex() {
+        return sex;
+    }
+
+    public void setSex(char sex) {
+        this.sex = sex;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getCourse() {
+        return course;
+    }
+
+    public void setCourse(int course) {
+        this.course = course;
+    }
+
+    public double getAvgGrade() {
+        return avgGrade;
+    }
+
+    public void setAvgGrade(double avgGrade) {
+        this.avgGrade = avgGrade;
+    }
 }
 
