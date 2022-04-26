@@ -10,12 +10,14 @@ public class Test6 {
 //            System.out.println("!!!");
 //            return el % 2 == 0;
 //        }).collect(Collectors.toSet());
-        Stream<Integer> stream2 = Stream.of(6, 6, 6);
-        Stream<Integer> stream3 = Stream.of(100, 200, 300);
-        Stream<Integer> stream4 = Stream.concat(stream2, stream3);
+//        Stream<Integer> stream2 = Stream.of(6, 6, 6);
+//        Stream<Integer> stream3 = Stream.of(100, 200, 300);
+//        Stream<Integer> stream4 = Stream.concat(stream2, stream3);
 //        System.out.println(stream4.collect(Collectors.toList()));
-        System.out.println(stream4.collect(Collectors.toSet()));
+//        System.out.println(stream4.collect(Collectors.toSet()));
 
+        Stream<Integer> stream5 = Stream.of(1, 2, 3, 4, 5, 1, 2, 3);
+        System.out.println(stream5.distinct().toList());
 
     }
 
