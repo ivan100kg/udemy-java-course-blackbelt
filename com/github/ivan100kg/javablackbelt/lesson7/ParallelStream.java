@@ -11,8 +11,8 @@ public class ParallelStream {
         list.add(1.0);
         list.add(0.25);
 
-        double sum1 = list.stream().mapToDouble(el -> el).sum();
-        double sum2 = list.stream().reduce(Double::sum).get();
+        double sum1 = list.stream().mapToDouble(d -> d).sum();
+        double sum2 = list.stream().reduce(0.0, Double::sum);
         double sumP = list.parallelStream().reduce((acc, el) -> acc + el).get();
         System.out.println(sum1);
         System.out.println(sum2);
