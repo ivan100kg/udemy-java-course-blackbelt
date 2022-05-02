@@ -1,16 +1,10 @@
 package com.github.ivan100kg.javablackbelt.lesson8;
 
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-
 public class Ex11 {
-    static int counter = 0;
-    static Lock lock = new ReentrantLock();
+    volatile static int counter = 0;
 
-    public static void inc() {
-        lock.lock();
+    synchronized public static void inc() {
         counter++;
-        lock.unlock();
     }
 
     public static void main(String[] args) throws InterruptedException {
