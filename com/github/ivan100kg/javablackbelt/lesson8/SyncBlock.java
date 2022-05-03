@@ -14,11 +14,16 @@ public class SyncBlock {
 }
 
 class RS implements Runnable {
-    public void doWork1() {
+    private void doWork1() {
+        doWork2();
         synchronized (this) {
             Counter.count++;
             System.out.println(Counter.count);
         }
+    }
+
+    private void doWork2() {
+        System.out.println("Ura!!!");
     }
 
     @Override
