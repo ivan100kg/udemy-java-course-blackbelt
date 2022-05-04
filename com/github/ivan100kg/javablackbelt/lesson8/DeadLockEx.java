@@ -26,10 +26,10 @@ class Thread10 extends Thread {
 class Thread20 extends Thread {
     @Override
     public void run() {
-        System.out.println("Thread20: trying to get the monitor of object lock2");
-        synchronized (DeadLockEx.lock2) {
-            System.out.println("Thread20: the monitor of object lock2 is gotten");
-            synchronized (DeadLockEx.lock1) {
+        System.out.println("Thread20: trying to get the monitor of object lock1");
+        synchronized (DeadLockEx.lock1) {
+            System.out.println("Thread20: the monitor of object lock1 is gotten");
+            synchronized (DeadLockEx.lock2) {
                 System.out.println("Thread20: the monitors of objects lock1 and lock2 is gotten");
             }
         }
