@@ -8,10 +8,15 @@ public class CallableFactorial {
 
     public static void main(String[] args) {
         ExecutorService service = Executors.newSingleThreadExecutor();
-        Factorial2 factorial2 = new Factorial2(0);
+        Factorial2 factorial2 = new Factorial2(5);
         Future<Integer> future = service.submit(factorial2);
         try {
+            System.out.println(future.isDone());
+            System.out.println("Wanna to get a result");
             result = future.get();
+            System.out.println("Result is gotten");
+            System.out.println(future.isDone());
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -32,9 +37,12 @@ class Factorial2 implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        if (f <= 0) throw  new Exception("Wrong digit");
-        return CallableFactorial.result = IntStream.rangeClosed(1, f)
-                .reduce((acc, el) -> acc * el)
-                .orElse(0);
+        int result = 1;
+        if (f <= 0) throw new Exception("Wrong digit");
+        for (int i = 1; i <= f; i++) {
+            result *= i;
+            Thread.sleep(1000);
+        }
+        return result;
     }
 }
