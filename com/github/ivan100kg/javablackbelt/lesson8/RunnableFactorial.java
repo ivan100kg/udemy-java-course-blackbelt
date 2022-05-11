@@ -1,20 +1,24 @@
 package com.github.ivan100kg.javablackbelt.lesson8;
 
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.Future;
 import java.util.stream.IntStream;
 
 public class RunnableFactorial {
     static int result;
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, ExecutionException {
         ExecutorService service = Executors.newSingleThreadExecutor();
         Factorial factorial = new Factorial(5);
-        service.execute(factorial);
+//        service.execute(factorial);
+        Future<?> future = service.submit(factorial);
+        System.out.println(future.get());
         service.shutdown();
-        service.awaitTermination(10, TimeUnit.SECONDS);
         System.out.println(result);
+        System.out.println(future.isDone());
+        System.out.println(future.isCancelled());
     }
 }
 
