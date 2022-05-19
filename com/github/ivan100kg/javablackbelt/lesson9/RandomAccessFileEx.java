@@ -24,6 +24,8 @@ public class RandomAccessFileEx {
             file.seek(0);
             System.out.println(file.readLine());
 
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }
