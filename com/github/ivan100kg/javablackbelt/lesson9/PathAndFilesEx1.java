@@ -24,8 +24,9 @@ public class PathAndFilesEx1 {
 
         if(!Files.exists(filePath)) {
             Files.createFile(filePath);
-
-
+        }
+        if(!Files.exists(DirectoryPath)) {
+            Files.createDirectory(DirectoryPath);
         }
         System.out.println(Files.getAttribute(filePath, "creationTime"));
 
